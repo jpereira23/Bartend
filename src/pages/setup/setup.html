@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="settings" style="margin:0px 10px 0px 0px"></ion-icon>Setup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="drink-wrapper" padding>
+  <ion-segment>
+    <ion-segment-button (click)="mapClicked()">
+      Map
+    </ion-segment-button>
+    <ion-segment-button (click)="setupClicked()">
+      Setup
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf="page == true">
+    MAP
+  </div>
+  <div *ngIf="page == false">
+    <div class="label-drink">
+      Enter a name for this alcohol
+    </div>
+    <div class="input-class">
+      <input class="drink-input" [(ngModel)]="drinkName" />
+    </div>
+    <div class="alcohol-type">
+      Drink Type
+      <div class="toggle-class">
+        <div class="alcohol">
+          <div class="alcohol-label">
+            Alcohol
+          </div>
+          <div class="alcohol-toggle">
+            <ion-toggle></ion-toggle> 
+          </div>
+          <div class="line"></div>
+          <div class="alcohol-label">
+            Mixer
+          </div>
+          <div class="alcohol-toggle">
+            <ion-toggle></ion-toggle> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submit-class">
+      <button class="the-button">SUBMIT</button>
+    </div>
+  </div>
+</ion-content>
