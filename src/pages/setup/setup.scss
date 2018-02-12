@@ -1,82 +1,20 @@
-.drink-input{
-  border: none;
-  width: 100%;
-  margin: 0%;
-  text-align: left;
-  background-color: #7667F6;
-  color: white;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  font-size: 30px;
-}
-
 .drink-wrapper{
   background-color: rgba(86, 66, 244, 1.0);
 }
+.body-wrapper{
+  height:100%;
 
-.label-drink{
-  margin: 5% 0% 1% 0%;
-  padding: 1%;
-  color: white;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  vertical-align: middle; 
 }
-
-.toggle-class{
-  width: 120%;
-  height: 160px;
-  background-color: #7667F6;
-  margin: 0% -10% 0% -10%;
-}
-
-.alcohol-toggle{
-  margin: -15% 0% 0% 80%;
-}
-
-.submit-class{
+.header{
+  height: 20%;
   margin: 10% 0% 0% 0%;
 }
-.the-button{
-  margin: 0% -10%;
-  width: 120%;
-  height: 80px;
-  background-color: #9C91F8;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  color: white;
+
+.select-section{
+  height: 80%;
 }
 
-.alcohol-label{
-  padding: 10%;
+.fab-section{
+  margin: 15% 0% 0% 0%;
 }
 
-.label-class{
-  display: flex;
-  justify-content: center;
-}
-
-.line{
-  width: 90%;
-  height: 0.5px;
-  background-color: white;
-  margin: 10% 0% 0% 10%;
-}
-
-
-.input-class{
-
-  background-color: #7667F6;
-  width: 120%;
-  padding: 5% 5% 1% 5%;
-  height: 80px;
-  margin: 0% -10% 0% -10%;
-}
-
-.alcohol-toggle{
-  color: white;
-  font-family: 'Encode Sans Expanded', sans-serif;
-}
-
-.alcohol-type{
-  color: white;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  margin: 5% 0% 1% 0%;
-}

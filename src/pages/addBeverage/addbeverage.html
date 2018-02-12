@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="settings" style="margin:0px 10px 0px 0px"></ion-icon>Setup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="drink-wrapper" padding>
+    <div class="label-drink">
+      Enter a name for this alcohol
+    </div>
+    <div class="input-class">
+      <input class="drink-input" [(ngModel)]="drinkName" />
+    </div>
+    <div class="alcohol-type">
+      Drink Type
+      <div class="toggle-class">
+        <ion-item class="toggle-item">
+          <ion-label>Alcohol</ion-label>
+          <ion-toggle class="the-toggle" [(ngModel)]="booleanAlcohol" (ionChange)="alcoholToggle()"></ion-toggle> 
+        </ion-item>
+        <ion-item class="toggle-item">
+          <ion-label>Mixer</ion-label>
+          <ion-toggle class="the-toggle" [(ngModel)]="booleanMixer" (ionChange)="mixerToggle()"></ion-toggle>
+        </ion-item>
+      </div>
+    </div>
+    <div class="submit-class">
+      <button class="the-button">SUBMIT</button>
+    </div>
+</ion-content>

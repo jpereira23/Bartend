@@ -2,20 +2,18 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { Drink } from '../models/drink';
-import { AddBeveragePage } from '../addBeverage/addbeverage';
 
 @Component({
-  selector: 'setup',
-  templateUrl: 'setup.html',
+  selector: 'addbeverage',
+  templateUrl: 'addbeverage.html',
 })
 
-export class SetupPage{
+export class AddBeveragePage{
   page: boolean = true;
   drinkName: string = "";
   booleanAlcohol: boolean;
   booleanMixer: boolean;
   drinks: Array<Drink> = []; 
-  addBeveragePage = AddBeveragePage;
   
   constructor(public navCtrl: NavController){
     this.booleanAlcohol = true;
@@ -37,10 +35,6 @@ export class SetupPage{
     else if(this.booleanAlcohol == false){
       this.booleanMixer = true;
     }
-  }
-
-  addBeverage(){
-    this.navCtrl.push(this.addBeveragePage); 
   }
 
   mixerToggle(){

@@ -6,14 +6,13 @@
 
 <ion-content padding>
   <h2>Connect Page</h2>
-  <ion-item>
-    <ion-label>Connected</ion-label>
-    <ion-toggle checked="false" [(ngModel)]="connection" (click)="switchPressed()"></ion-toggle>
-    <div *ngIf="connection == true">
-      It worked
-    </div>
+  <div *ngIf="loading == false">
+  <ion-spinner></ion-spinner>
+  </div>
+  <div *ngIf="loading == true">
     <div *ngIf="connection == false">
-      Checking to see
+    <button ion-button round outline (click)="connect()">Connect</button>
     </div>
-  </ion-item>
+  </div>
 </ion-content>
+
