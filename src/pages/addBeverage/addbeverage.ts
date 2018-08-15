@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { Drink } from '../models/drink';
-
+import { Beverage } from '../models/beverage';
+import { DataService } from '../data.service';
 @Component({
   selector: 'addbeverage',
   templateUrl: 'addbeverage.html',
@@ -13,11 +15,17 @@ export class AddBeveragePage{
   drinkName: string = "";
   booleanAlcohol: boolean;
   booleanMixer: boolean;
-  drinks: Array<Drink> = []; 
-  
-  constructor(public navCtrl: NavController){
+  beverages: Array<Beverage> = [];
+
+  constructor(public navCtrl: NavController, private dataService: DataService, private storage: Storage){
     this.booleanAlcohol = true;
     this.booleanMixer = false;
+    this.storage.get('beverages').then((val) => {
+      if(val != null)
+      {
+	       this.beverages = val;
+      }
+    });
   }
 
   mapClicked(){
@@ -25,9 +33,9 @@ export class AddBeveragePage{
   }
 
   setupClicked(){
-    this.page = false; 
+    this.page = false;
   }
-  
+
   alcoholToggle(){
     if(this.booleanAlcohol == true){
       this.booleanMixer = false;
@@ -47,6 +55,12 @@ export class AddBeveragePage{
   }
 
   onSubmit(){
-    
+    var aDrink = new Beverage();
+    aDrink.drinkName = this.drinkName;
+    aDrink.alcohol = this.booleanAlcohol;
+    aDrink.mixer = this.booleanMixer;
+    this.beverages.push(aDrink);
+    this.storage.set('beverages', this.beverages);
+    this.navCtrl.pop();
   }
 }

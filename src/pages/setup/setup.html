@@ -4,9 +4,6 @@
       <ion-icon name="settings" style="margin:0px 10px 0px 0px"></ion-icon>Setup
     </ion-title>
   </ion-navbar>
-</ion-header>
-
-<ion-content class="drink-wrapper" padding>
   <ion-segment>
     <ion-segment-button (click)="mapClicked()">
       Map
@@ -15,19 +12,15 @@
       Setup
     </ion-segment-button>
   </ion-segment>
-  <div class="body-wrapper">
+</ion-header>
+
+<ion-content padding>
+  <div>
     <div *ngIf="page == true">
-      MAP
+      <img src="./assets/imgs/schematic.gif" />
     </div>
     <div *ngIf="page == false">
-      <div class="header">
-        Setup
-        <ion-fab class="fab-section" right top>
-          <button ion-fab color="red" (click)="addBeverage()"><ion-icon name="add"></ion-icon></button>
-        </ion-fab>
-      </div>
-      <div class="select-section">
-      </div>
+      <slot-view [loaded]="loaded" [inputSlots]="inputSlots" (arrayOfSlots)="onSaved($event)"></slot-view>
     </div>
   </div>
 </ion-content>

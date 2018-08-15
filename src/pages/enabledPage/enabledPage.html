@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-card-header>
+    Checking Enabling Bluetooth
+  </ion-card-header>
+  <ion-card-content>
+    <div *ngIf="loading == true && didntWork == false">
+      <ion-spinner></ion-spinner>
+    </div>
+    <div *ngIf="loading == false && didntWork == false">
+      Connected.
+    </div>
+    <div *ngIf="didntWork == true">
+      <button ion-button (click)="tryAgain()">Try Again.</button>
+    </div>
+  </ion-card-content>
+</ion-card>

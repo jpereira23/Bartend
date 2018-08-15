@@ -1,0 +1,11 @@
+<ion-card>
+  <ion-card-header *ngIf="loading == true">
+    Making the connection...
+  </ion-card-header>
+  <ion-card-header *ngIf="loading == false">
+    Connected.
+  </ion-card-header>
+  <ion-card-content>
+      <button ion-button (click)="writeData()">Make Drink</button>
+  </ion-card-content>
+</ion-card>

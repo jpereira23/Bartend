@@ -6,4 +6,10 @@
 
 <ion-content padding>
   <h2>Add Drink Page</h2>
+  <ion-item>
+    <ion-label floating>Drink Name</ion-label>
+    <ion-input [(ngModel)]="currentDrink.drinkName" (change)="isInputChanging()"></ion-input>
+  </ion-item>
+
+  <button *ngIf="drinkNameEntered == true" ion-button round (click)="addBeveragePage()">Continue</button>
 </ion-content>

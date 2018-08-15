@@ -1,13 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      View
+      Drinks
     </ion-title>
+    <ion-buttons start>
+      <button ion-button *ngIf="selectOn == false" (click)="selected()">Select</button>
+      <button ion-button *ngIf="selectOn == true" color="danger" (click)="deleteDrinks()">Delete</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>View</h2>
+<ion-content class="card-background-page" padding>
+  <ion-card *ngFor="let drink of drinks; let i = index" (click)="selectedCard(i)">
+    <ion-fab top right *ngIf="drink.selectedForDeleting == true">
+      <button ion-fab mini color="danger"><ion-icon name="remove"></ion-icon></button>
+    </ion-fab>
+    <img [src]="pics[i%8]">
+    <div class="card-title">{{ drink.drinkName }}</div>
+    <div class="card-subtitle">{{ drink.mixerAlcohols.length }} varieties</div>
+  </ion-card>
   <ion-fab right bottom>
     <button ion-fab color="light" (tap)="addDrink()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>

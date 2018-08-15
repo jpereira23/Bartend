@@ -18,7 +18,7 @@
       <div class="toggle-class">
         <ion-item class="toggle-item">
           <ion-label>Alcohol</ion-label>
-          <ion-toggle class="the-toggle" [(ngModel)]="booleanAlcohol" (ionChange)="alcoholToggle()"></ion-toggle> 
+          <ion-toggle class="the-toggle" [(ngModel)]="booleanAlcohol" (ionChange)="alcoholToggle()"></ion-toggle>
         </ion-item>
         <ion-item class="toggle-item">
           <ion-label>Mixer</ion-label>
@@ -27,6 +27,6 @@
       </div>
     </div>
     <div class="submit-class">
-      <button class="the-button">SUBMIT</button>
+      <button class="the-button" (click)="onSubmit()">SUBMIT</button>
     </div>
 </ion-content>

@@ -1,0 +1,14 @@
+<ion-content>
+ <h2>Change Beverage for {{ relativeDrink.drinkName }}</h2>
+ <ion-item>
+  <ion-label>Pick Drink</ion-label>
+  <ion-select [(ngModel)]="currentMixerAlcohol.beverage">
+    <ion-option *ngFor="let drink of drinks; let i = index" [value]="drink">{{ drink.drinkName }} </ion-option>
+  </ion-select>
+ </ion-item>
+ <ion-item>
+   <ion-range [(ngModel)]="curretnMixerAlcohol.percentage">
+   </ion-range>
+  </ion-item>
+  <button ion-button round (click)="saveChanges()">Save Changes</button>
+</ion-content>

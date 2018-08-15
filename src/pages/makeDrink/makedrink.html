@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar class="aHeader">
+    <ion-title class="aHeader">Make Drink</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="drinkSize()">Drink Size</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page">
+  <ion-card *ngFor="let drink of drinks; let i = index" (click)="writeDrink(i)">
+    <img [src]="pics[i%8]">
+    <div class="card-title">{{ drink.drinkName }}</div>
+    <div class="card-subtitle">{{ drink.mixerAlcohols.length }} varieties</div>
+  </ion-card>
+</ion-content>

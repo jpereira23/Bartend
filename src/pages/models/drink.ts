@@ -1,13 +1,15 @@
+import { MixerAlcohol } from './mixer-alcohol';
+
 export class Drink {
   drinkName: string;
-  alcohol: boolean;
-  mixer: boolean;
+  mixerAlcohols: Array<MixerAlcohol>;
+  selectedForDeleting: boolean;
   constructor()
   {
     this.drinkName = "";
-    this.alcohol = true;
-    this.mixer = false;
-  }   
+    this.mixerAlcohols = [];
+    this.selectedForDeleting = false;
+  }
 
 
 }
