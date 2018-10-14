@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="scanCode()">Scan Code</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let drink of drinks">
+    <ion-item>
+      <h2>{{ drink.username }}</h2>
+      <p>{{ drink.drinkName }}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -1,8 +1,6 @@
 import { Component, Input, SimpleChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { BluetoothService } from '../bluetooth.service';
-
 @Component({
   selector: 'connected-page',
   templateUrl: 'connectedPage.html'
@@ -15,7 +13,7 @@ export class ConnectedPage{
   @Output() tryConnect = new EventEmitter<boolean>();
   didntWork: boolean = false;
   loading: boolean = true;
-  constructor(private bluetoothService: BluetoothService){
+  constructor(){
   }
 
   ngOnChanges(changes: SimpleChanges){

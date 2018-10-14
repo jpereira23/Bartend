@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs/Rx'; 
+import { Http, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { forkJoin } from 'rxjs/observable/forkJoin';
+import { Subject, Observable } from 'rxjs/Rx';
 import { MixerAlcohol } from './models/mixer-alcohol';
 import { Drink } from './models/drink';
+import { Robot } from './models/robot';
 
 @Injectable()
 export class DataService {
@@ -10,9 +14,12 @@ export class DataService {
   toBeverageDetails: Observable<Drink>;
   backToAddDrink: Observable<Drink>;
   anEditDrink: Observable<Drink>;
+  url: string = "http://138.197.205.247:8080/api/";
+  headers: Headers = new Headers();
+
   addDrink(drink: string){
     this.drinks.next(drink);
-  } 
+  }
 
   toTheBeverageDetails(aDrink: Drink)
   {
@@ -27,7 +34,7 @@ export class DataService {
     this.toBeverageDetails = new Observable(tBD => {
       setTimeout(() => {
 	tBD.next(aDrink);
-      }, 1000);	
+      }, 1000);
     });
   }
 
@@ -40,5 +47,5 @@ export class DataService {
     });
   }
 
-  
+
 }

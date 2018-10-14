@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create User
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="qrScanner()">Scan Code</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="userName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Robot ID: {{ bartendID }}</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <button ion-button (click)="submitUser()">Submit</button>
+</ion-content>

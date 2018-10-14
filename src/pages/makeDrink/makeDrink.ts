@@ -5,11 +5,11 @@ import { Storage } from '@ionic/storage';
 import { Drink } from '../models/drink';
 import { Subscription } from 'rxjs/Subscription';
 import { Beverage } from '../models/beverage';
-import { BluetoothCenterPage } from '../bluetoothCenter/bluetoothCenter';
-
-import { BluetoothService } from '../bluetooth.service';
+//import { PairingMenu } from '../pairingMenu/pairingMenu';
+import { MakeDrinkMenu } from '../makeDrinkMenu/makeDrinkMenu';
 import { SlotService } from '../slot.service';
 import { IntroService } from '../intro.service';
+import { APIService } from '../api.service';
 
 
 @Component({
@@ -42,7 +42,7 @@ export class MakeDrinkPage {
   theDrinkSize: string = "1";
   subscription: Subscription;
 
-  constructor(private navCtrl: NavController, private modalController: ModalController, private bluetoothService: BluetoothService, private navParams: NavParams, private storage: Storage, private slotService: SlotService, private alertCtrl: AlertController, private introService: IntroService){
+  constructor(private navCtrl: NavController, private modalController: ModalController, private navParams: NavParams, private storage: Storage, private slotService: SlotService, private alertCtrl: AlertController, private introService: IntroService, private apiService: APIService){
 
   }
 
@@ -146,6 +146,13 @@ export class MakeDrinkPage {
 
   writeDrink(i: number)
   {
+    this.navCtrl.push(MakeDrinkMenu, {
+      drink: this.drinks[i]
+    });
+
+    //this.navCtrl.push(PairingMenu);
+
+    /*
     var enabledPromise = this.bluetoothService.checkEnabled();
     var availabilityPromise = this.bluetoothService.checkAvailability();
     enabledPromise.then((enabled) => {
@@ -165,6 +172,7 @@ export class MakeDrinkPage {
         });
       }
     });
+    */
   }
 
   drinkSize(){

@@ -10,6 +10,4 @@ export class MixerAlcohol {
     this.scale = 0;
     this.max = 10;
   }
-
-
 }

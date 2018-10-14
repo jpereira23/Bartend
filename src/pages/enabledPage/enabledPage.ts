@@ -1,8 +1,6 @@
 import { Component, Input, SimpleChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { BluetoothService } from '../bluetooth.service';
-
 @Component({
   selector: 'enabled-page',
   templateUrl: 'enabledPage.html'
@@ -14,7 +12,7 @@ export class EnabledPage{
   @Output() readyToCheck = new EventEmitter<boolean>();
   loading: boolean = true;
   didntWork: boolean = false;
-  constructor(private bluetoothService: BluetoothService){
+  constructor(){
   }
 
   ngOnChanges(changes: SimpleChanges){

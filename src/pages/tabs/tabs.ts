@@ -9,7 +9,6 @@ import { DrinkPage } from '../drink/drink';
 import { DataService } from '../data.service';
 import { MapViewPage } from '../mapView/mapView';
 import { CleanPage } from '../cleanPage/cleanPage';
-import { BluetoothService } from '../bluetooth.service';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -27,7 +26,7 @@ export class TabsPage {
   };
   @ViewChild('myTabs') tabRef: Tabs;
 
-  constructor(private dynamicService: DynamicService, private dataService: DataService, public events: Events, private bluetoothService: BluetoothService, private storage: Storage, private alertCtrl: AlertController, private popoverCtrl: PopoverController) {
+  constructor(private dynamicService: DynamicService, private dataService: DataService, public events: Events, private storage: Storage, private alertCtrl: AlertController, private popoverCtrl: PopoverController) {
     //this.events.publish('thedrinks', JSON.parse(localStorage.getItem('drinks')));
 
     this.dynamicService.connected$.subscribe(

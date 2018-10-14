@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { BluetoothService } from '../bluetooth.service';
-import { BluetoothCenterPage } from '../bluetoothCenter/bluetoothCenter';
+
 @Component({
   selector: 'clean-page',
   templateUrl: 'cleanPage.html'
 })
 
 export class CleanPage{
-  constructor(private bluetoothService: BluetoothService, private navCtrl: NavController){
+  constructor(private navCtrl: NavController){
 
   }
 
   commenceCleaning(){
+    /*
     var enabledPromise = this.bluetoothService.checkEnabled();
     var availabilityPromise = this.bluetoothService.checkAvailability();
 
@@ -34,5 +34,6 @@ export class CleanPage{
           });
       }
     });
+    */
   }
 }
